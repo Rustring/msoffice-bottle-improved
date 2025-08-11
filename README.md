@@ -13,10 +13,6 @@ Screenshot of Office 2007 (Taken by me):
 
 ![Screenshot_20240701_123107](https://github.com/user-attachments/assets/d659516e-73e3-4e9c-96dc-ae448c32429e)
 
-#### Video Tutorial:  
-
-[![YOUTUBE_TUTORIAL](https://img.youtube.com/vi/Gb95naAjBsg/0.jpg)](https://www.youtube.com/watch?v=Gb95naAjBsg)
-
 *Prerequisite:*   
 [Flatpak](https://flatpak.org/setup/)  
 [Bottles installed by Flatpak](https://flathub.org/apps/com.usebottles.bottles)  
@@ -57,6 +53,23 @@ If it doesn't work, add `WINEDLLOVERRIDES="gdiplus=n,b;riched20=n,b" %command%` 
 ![Screenshot_20240701_114718](https://github.com/tazihad/msoffice-bottle/assets/19417232/ef064bed-62aa-4349-9424-7188cb4f6cb0)  
 
 8. That's it. Now install 32-bit version of *MS Office 2010*. Find the executable and run with Bottles.  
+
+### Fixes To Common Problems
+
+If wine runner `8.2` doesn't work use wine runner `3.0.3`:
+
+```
+mkdir -p ~/.var/app/com.usebottles.bottles/data/bottles/runners/pol-3.0.3 && \
+curl -L https://www.playonlinux.com/wine/binaries/phoenicis/upstream-linux-x86/PlayOnLinux-wine-3.0.3-upstream-linux-x86.tar.gz \
+-o /tmp/PlayOnLinux-wine-3.0.3-upstream-linux-x86.tar.gz && \
+tar -xz -C ~/.var/app/com.usebottles.bottles/data/bottles/runners/pol-9.0 --strip-components=1 \
+-f /tmp/PlayOnLinux-wine-3.0.3-upstream-linux-x86.tar.gz && \
+rm /tmp/PlayOnLinux-wine-3.0.3-upstream-linux-x86.tar.gz
+```
+
+If you find that PowerPoint crashes for no reason, then remove the `riched20` DLL override, by going into -> `Setting` -> `DLL Overrides`  
+
+But do __not__ remove the dependency.
 
 ## Microsoft Office 2013, 2016
 
