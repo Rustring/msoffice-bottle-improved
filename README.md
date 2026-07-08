@@ -54,23 +54,6 @@ If it doesn't work, add `WINEDLLOVERRIDES="gdiplus=n,b;riched20=n,b" %command%` 
 
 8. That's it. Now install 32-bit version of *MS Office 2010*. Find the executable and run with Bottles.  
 
-### Fixes To Common Problems
-
-If wine runner `8.2` doesn't work use wine runner `3.0.3`:
-
-```
-mkdir -p ~/.var/app/com.usebottles.bottles/data/bottles/runners/pol-3.0.3 && \
-curl -L https://www.playonlinux.com/wine/binaries/phoenicis/upstream-linux-x86/PlayOnLinux-wine-3.0.3-upstream-linux-x86.tar.gz \
--o /tmp/PlayOnLinux-wine-3.0.3-upstream-linux-x86.tar.gz && \
-tar -xz -C ~/.var/app/com.usebottles.bottles/data/bottles/runners/pol-9.0 --strip-components=1 \
--f /tmp/PlayOnLinux-wine-3.0.3-upstream-linux-x86.tar.gz && \
-rm /tmp/PlayOnLinux-wine-3.0.3-upstream-linux-x86.tar.gz
-```
-
-If you find that PowerPoint crashes for no reason, then remove the `riched20` DLL override, by going into -> `Setting` -> `DLL Overrides`  
-
-But do __not__ remove the dependency.
-
 ## Microsoft Office 2013, 2016
 
 Screenshot of Office 2013 (Taken by me):
